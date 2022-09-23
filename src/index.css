@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --font-base: "Poppins", sans-serif;
+  --font-alt: "Poppins", sans-serif;
+  --color-dark: #161719;
+  --color-light: #f6f1f1;
+  --color-left-panel: #ebe5e5fe;
+  --color-grey-tabs: #212224;
+  --color-white-tabs: #ffffff;
+  --color-cream-text: #f1f0db;
+  --color-black-text: #282828;
+  --color-grey: #757575;
+  --color-grey-search: #a9a9a9f5;
+  --color-grey-line: #e0e0e0;
+  --color-red-highlight: #b32c31;
+  --color-green: #6cc04a;
+}
+
+* {
+  padding: 0;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-alt);
+  font-size: 1.6rem;
+  scroll-behavior: smooth;
+
+  /* background: url("./assets/bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed; */
+  color: white;
+  cursor: default;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: var(--font-base);
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* SCROLL BAR CUSTOMISATION */
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+  margin-left: 1rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 0.4rem;
+  background: var(--color-left-panel);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #bda7a7fe;
+}
+
+.slide-bottom {
+  -webkit-animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.slide-out {
+  -webkit-animation: slide-out 0.5s ease forwards;
+  animation: slide-out 0.5s ease forwards;
+}
+
+@-webkit-keyframes slide-out {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateY(-55%);
+    transform: translateY(-55%);
+    opacity: 0.1;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateY(-55%);
+    transform: translateY(-55%);
+    opacity: 0.1;
+  }
+}
+
+.slide-right {
+  -webkit-animation: slide-right 0.5s ease forwards;
+  animation: slide-right 0.5s ease forwards;
+}
+
+@-webkit-keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(-25%);
+    transform: translateX(-25%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(-25%);
+    transform: translateX(-25%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.slide-left {
+  -webkit-animation: slide-left 0.5s ease forwards;
+  animation: slide-left 0.5s ease forwards;
+}
+
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(-55%);
+    transform: translateX(-55%);
+    opacity: 0.1;
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(-55%);
+    transform: translateX(-55%);
+    opacity: 0.1;
+  }
+}

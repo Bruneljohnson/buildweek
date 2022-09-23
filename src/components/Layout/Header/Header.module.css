@@ -1,0 +1,12 @@
+.header {
+  position: sticky;
+  background: var(--color-white-tabs);
+  top: 0;
+  width: 100%;
+  z-index: 30;
+  height: 7rem;
+  transition: top 0.6s ease;
+  border-bottom: 1px solid var(--color-grey-line);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.209);
+  padding: 1rem 2rem;
+}

@@ -1,0 +1,115 @@
+.fullProfile {
+  background: var(--color-left-panel);
+  padding: 3rem 1.5rem;
+  border-radius: 0.8rem;
+  width: 50%;
+  height: 55rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  gap: 1rem;
+}
+
+.fullProfile figure img {
+  width: 11rem;
+  height: 11rem;
+  border-radius: 50%;
+}
+
+.fullProfile_title {
+  margin-bottom: 1rem;
+}
+
+.fullProfile_title h2 {
+  text-transform: capitalize;
+  text-align: center;
+  color: var(--color-black-text);
+  font-size: 2.5rem;
+}
+
+.fullProfile_title-subinfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--color-black-text);
+  font-size: 1.4rem;
+}
+
+.fullProfile_deets {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75%;
+  gap: 1rem;
+  font-size: 1.2rem;
+  color: var(--color-black-text);
+}
+
+.fullProfile_deets li {
+  margin-left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.1rem;
+}
+
+.fullProfile_deets li > strong,
+.fullProfile_deets li > span {
+  margin-left: 0;
+}
+
+.button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.button-email {
+  right: 1rem;
+  top: 1rem;
+  padding: 0.5rem;
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: orange;
+  color: var(--color-black-text);
+  border: none;
+  border-radius: 0.4rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.button:focus,
+.button-email:focus {
+  outline: none;
+}
+
+.button:hover {
+  color: var(--color-red-highlight);
+}
+
+.button-email:hover {
+  background: var(--color-red-highlight);
+  color: var(--color-cream-text);
+}
+
+.exp {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  width: 100%;
+  margin-left: 0;
+}

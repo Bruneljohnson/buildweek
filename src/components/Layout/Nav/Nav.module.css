@@ -1,0 +1,90 @@
+.nav {
+  display: grid;
+  height: 6rem;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo,
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.logo h1,
+.iconContainer p {
+  color: var(--color-black-text);
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+
+.iconContainer p {
+  font-weight: 700;
+}
+
+.logo {
+  margin-left: 0;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.icons {
+  margin-right: 0;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.iconsvg {
+  width: 2rem;
+  height: 2rem;
+  color: var(--color-grey);
+}
+
+.profileImg,
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.profileImg {
+  width: 100%;
+}
+
+.profileImg img {
+  width: 3rem;
+  height: 3rem;
+  border: 1.5px solid var(--color-grey-line);
+  border-radius: 50%;
+}
+
+.profileImg:hover,
+.profileImg {
+  background: transparent;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+}
+
+.profileImg:hover {
+  background: rgba(157, 157, 157, 0.301);
+}
+
+.iconContainer {
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  background: transparent;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+}
+
+.iconContainer p {
+  text-transform: capitalize;
+  color: var(--color-red-highlight);
+}
+.iconContainer:hover {
+  background: rgba(157, 157, 157, 0.301);
+}

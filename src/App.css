@@ -1,0 +1,270 @@
+.section-padding {
+  padding: 2.5rem 4rem;
+}
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.flex-space-between {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  margin-left: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.app-bg {
+  background-color: #242d34;
+  width: 100%;
+  height: 100vh;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+}
+
+.app-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  min-height: 95vh;
+}
+
+.app-wrapper_info {
+  flex: 1;
+  z-index: 5;
+  max-width: 76rem;
+  min-width: 46rem;
+  display: flex;
+  gap: 2rem;
+  padding: 0 1rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.app-wrapper_img {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-wrapper_img img {
+  width: 100%;
+  height: 95vh;
+  object-fit: cover;
+}
+
+.custom-button,
+.custom-button-key {
+  background: transparent;
+  color: var(--color-grey);
+  display: inline-block;
+  width: 45%;
+  align-self: flex-start;
+  font-family: var(--font-base);
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem 0.3rem;
+  border: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.custom-button-key {
+  font-size: 1.2rem;
+  width: 10%;
+}
+
+.custom-button-key:hover {
+  color: var(--color-red-highlight);
+  border-bottom: 2px solid var(--color-red-highlight);
+}
+
+.p-poppin1,
+.p-poppins2 {
+  font-family: var(--font-base);
+
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  font-feature-settings: "tnum" on, "lnum" on;
+  line-height: 2.8rem;
+  font-size: 2rem;
+}
+
+.p-poppin1 {
+  color: var(--color-cream-text);
+}
+.p-poppin2 {
+  color: var(--color-black-text);
+}
+
+.hidden {
+  display: none;
+}
+
+.line {
+  margin: 0.5rem 0;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+}
+
+.lineV {
+  width: 1px;
+  height: 2rem;
+  background-color: var(--color-grey-line);
+}
+
+.seperator {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.seperatorH {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.ma-tp-md {
+  margin-top: 3rem !important;
+}
+.ma-bt-md {
+  margin-bottom: 4rem !important;
+}
+
+.ma-bt-lg {
+  margin-bottom: 3.5rem !important;
+}
+
+.right {
+  text-align: right !important;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 2000px) {
+  /* .custom-button,.p-poppins1 {
+    font-size: 1.8rem;
+  }
+
+  .p-poppins2 {
+    font-size: 2rem;
+    line-height: 3rem;
+  } */
+}
+
+@media screen and (max-width: 1550px) {
+}
+
+@media screen and (max-width: 1150px) {
+  .app-wrapper_img img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .app-wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .section-padding {
+    padding: 3rem 2rem;
+  }
+  .app-wrapper_img img {
+    width: 100%;
+    height: 35rem;
+    object-fit: cover;
+  }
+  .app-wrapper_img {
+    flex: 1;
+    width: 100%;
+    margin: 2rem 0 0 0;
+  }
+
+  .app-wrapper_info {
+    max-width: 70rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  /* .p-poopins1 {
+    font-size: 2.1rem;
+  }
+
+  .p-poppins2 {
+    font-size: 1.4rem;
+  } */
+  .app-wrapper_info {
+    max-width: 50rem;
+    min-width: 35.5rem;
+  }
+  .custom-button {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  /* .p-poppins2 {
+    font-size: 1.2rem;
+  }
+
+  .p-poppin1 {
+    font-size: 1.8rem;
+  } */
+
+  .app-wrapper_info {
+    max-width: 40rem;
+  }
+
+  .custom-button {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .active:link,
+  .active:visited,
+  .active:hover,
+  .active:active {
+    padding: 1rem 2rem;
+  }
+  .app-wrapper_info {
+    max-width: 32rem;
+    min-width: 30.5rem;
+  }
+}

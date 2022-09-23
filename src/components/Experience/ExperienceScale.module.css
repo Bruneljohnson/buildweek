@@ -1,0 +1,56 @@
+.exScale {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 10rem;
+  right: 4rem;
+  cursor: pointer;
+}
+
+.ex {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  text-transform: capitalize;
+  text-align: left;
+  padding: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  width: 18rem;
+  height: 3rem;
+  border-radius: 0.4rem;
+  color: var(--color-white-tabs);
+}
+
+.ex:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.one {
+  background: red;
+}
+
+.two {
+  background: #bb7a00;
+}
+
+.three {
+  background: orange;
+}
+
+.four {
+  background: yellow;
+  color: var(--color-black-text);
+}
+
+.five {
+  background: #00c700;
+}
+
+.six {
+  background: #004f00;
+}

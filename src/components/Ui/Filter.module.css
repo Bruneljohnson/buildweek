@@ -1,0 +1,30 @@
+.filter {
+  position: relative;
+  margin-top: 3rem;
+}
+.workshop {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  margin-left: 0;
+  width: 40%;
+}
+
+.filter_input {
+  font-size: 1.6rem;
+  display: inline-block;
+  margin-left: 0;
+  text-transform: capitalize;
+  color: var(--color-grey);
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-bottom: 2px solid var(--color-red-highlight);
+}
+
+.filter_input:hover {
+  color: var(--color-red-highlight);
+}

@@ -3,7 +3,7 @@
   background: var(--color-white-tabs);
   top: 0;
   width: 100%;
-  z-index: 30;
+  z-index: 300;
   height: 7rem;
   transition: top 0.6s ease;
   border-bottom: 1px solid var(--color-grey-line);

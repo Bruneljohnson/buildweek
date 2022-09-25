@@ -2,11 +2,11 @@ import React from "react";
 import classes from "./ListItem.module.css";
 
 const ListItem = (props) => {
-  /** onFullProfile takes up id of the mapped item
-   * to show it's full Profile.
+  /** onFullProfile takes up id of the mapped item.
+   * making it possible to show correct full Profile.
    */
 
-  const { id, name, role, club, image } = props;
+  const { id, name, role, club, image, profileIdentity } = props;
 
   const showFullProfileHandler = () => {
     const data = id;
@@ -14,7 +14,13 @@ const ListItem = (props) => {
   };
 
   return (
-    <div className={classes["list-item"]} onClick={showFullProfileHandler}>
+    <div
+      className={classes["list-item"]}
+      style={{
+        background: `${profileIdentity === id ? "#ebe5e5fe" : "#ffffff"}`,
+      }}
+      onClick={showFullProfileHandler}
+    >
       <figure className={classes["list-item_imgCon"]}>
         <img src={image} alt={`Red chair of ${name.split(" ")[0]}`} />
       </figure>

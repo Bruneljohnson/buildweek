@@ -8,3 +8,9 @@
   background: var(--color-light);
   width: 100%;
 }
+
+@media screen and (max-width: 1150px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

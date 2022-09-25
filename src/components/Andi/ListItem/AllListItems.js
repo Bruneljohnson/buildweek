@@ -7,6 +7,7 @@ import ListItem from "./ListItem";
 
 const AllListItems = (props) => {
   const dispatch = useDispatch();
+  const { isDesktop } = props;
 
   /** Dropdown menu values */
   const searchSelect = useSelector((state) => state.data.searchSelect);
@@ -19,7 +20,7 @@ const AllListItems = (props) => {
   /** ANDi tab id */
   const profileIdentity = useSelector((state) => state.data.profileIdentity);
 
-  /** data from API and search input value */
+  /** data from API CALLS and search input value */
   const trainers = useSelector((state) => state.data.trainers);
   const workshops = useSelector((state) => state.data.workshops);
   const searchValue = useSelector((state) => state.data.searchValue);
@@ -31,40 +32,44 @@ const AllListItems = (props) => {
     dispatch(DataActions.storeProfileIdentity(data));
     setShowProfile(true);
   };
+  const showProfileMobileHandler = (data) => {
+    dispatch(DataActions.storeProfileIdentity(data));
+    setShowProfile((prev) => !prev);
+  };
 
+  /** Hide Profile if theres a change in the filter menus. */
   useEffect(() => {
     setShowProfile(false);
   }, [clubSelect, workExSelect, workshopSelect]);
 
   /** Filter depending on Search select option. */
-
   let filter;
 
-  // Default & name search
-  if (searchSelect === 1 && !searchValue) {
+  // Display list Default & Name Search filter is chosen
+  if (searchSelect === 1 && (!searchValue || searchValue === "")) {
     filter = trainers;
   }
+
   if (searchSelect === 1 && searchValue) {
     const nameSearch = trainers.filter((trainer) =>
-      trainer?.fields?.name.toLowerCase().startsWith(`${searchValue}`)
+      trainer?.name.toLowerCase().startsWith(`${searchValue}`)
     );
     filter = nameSearch;
   }
 
-  // Workshop & experience
-
+  // Display list when Workshop & Experience filter is chosen
   if (searchSelect === 2 && workshopSelect && workExSelect) {
-    const findWorkshop = workshops.filter(
-      (workshop) => Number(workshop?.pk) === Number(workshopSelect)
+    const findWorkshop = workshops.find(
+      (workshop) => workshop?.name.toLowerCase().trim() === workshopSelect
     );
 
-    const workshopTrainers = findWorkshop[0]?.fields ?? null;
+    const workshopTrainers = findWorkshop ?? null;
 
     const findExp =
       workshopTrainers.trainers
         .filter(
           (trainer) =>
-            Number(trainer?.experience_level) === Number(workExSelect)
+            Number.parseInt(trainer?.experience_level) === Number(workExSelect)
         )
         .map((ex) => ex?.trainer) ?? [];
 
@@ -75,15 +80,14 @@ const AllListItems = (props) => {
     filter = [];
   }
 
-  // Business Unit
+  // Display list when Business Unit filter is chosen
   if (searchSelect === 3 && !clubSelect) {
     filter = [];
   }
 
   if (searchSelect === 3 && clubSelect) {
     const clubSearch = trainers.filter(
-      /** WEIRD JS EQUILTY ISSUE CONVERT TO NUMBER */
-      (trainer) => Number(trainer?.fields?.club?.pk) === Number(clubSelect)
+      (trainer) => trainer?.club?.name.toLowerCase().trim() === clubSelect
     );
     filter = clubSearch;
   }
@@ -91,27 +95,62 @@ const AllListItems = (props) => {
   return (
     <div className={`${classes["all-list"]}`}>
       <h3>All ANDis ({filter.length ?? 0} ANDis)</h3>
-      <div className={classes["mapped-list"]}>
-        {filter.length === 0 && (
-          <p className={classes.err}>We can't find any ANDis to display</p>
-        )}
-        {filter.length !== 0 && (
-          <ul className={classes["mapped-list_ul"]}>
-            {filter.map((number, i) => (
-              <ListItem
-                key={i}
-                id={number.pk}
-                name={number.fields.name}
-                role={number.fields.company_role}
-                image={number.fields.image}
-                club={number.fields.club.fields.name}
-                onFullProfile={showProfileHandler}
-              />
-            ))}
-          </ul>
-        )}
-        {showProfile && <FullProfile profileState={profileIdentity} />}
-      </div>
+      {isDesktop && (
+        <div className={classes["mapped-list"]}>
+          {filter.length === 0 && (
+            <p className={classes.err}>We can't find any ANDis to display</p>
+          )}
+          {filter.length !== 0 && (
+            <ul className={classes["mapped-list_ul"]}>
+              {filter.map((number, i) => (
+                <ListItem
+                  key={i}
+                  id={number.id}
+                  name={number?.name}
+                  role={number?.company_role}
+                  image={number?.img}
+                  club={number?.club?.name}
+                  profileIdentity={profileIdentity}
+                  onFullProfile={showProfileHandler}
+                />
+              ))}
+            </ul>
+          )}
+          {showProfile && <FullProfile profileState={profileIdentity} />}
+        </div>
+      )}
+
+      {/* MOBILE RESPONSIVE */}
+      {!isDesktop && (
+        <div className={classes["mapped-list"]}>
+          {!showProfile && filter.length === 0 && (
+            <p className={classes.err}>We can't find any ANDis to display</p>
+          )}
+          {!showProfile && filter.length !== 0 && (
+            <ul className={classes["mapped-list_ul"]}>
+              {filter.map((number, i) => (
+                <ListItem
+                  key={i}
+                  id={number.id}
+                  name={number?.name}
+                  role={number?.company_role}
+                  image={number?.img}
+                  club={number?.club?.name}
+                  profileIdentity={profileIdentity}
+                  onFullProfile={showProfileMobileHandler}
+                />
+              ))}
+            </ul>
+          )}
+          {showProfile && (
+            <FullProfile
+              isDesktop={isDesktop}
+              onFullProfile={showProfileMobileHandler}
+              profileState={profileIdentity}
+            />
+          )}
+        </div>
+      )}
     </div>
   );
 };

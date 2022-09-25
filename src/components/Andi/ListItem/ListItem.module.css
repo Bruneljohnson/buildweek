@@ -26,7 +26,7 @@
 }
 
 .list-item_imgCon {
-  width: 50%;
+  width: 60%;
   display: flex;
   margin-left: 0;
 }
@@ -39,7 +39,6 @@
 }
 .list-item_user-info {
   display: flex;
-
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -61,4 +60,66 @@
   margin-top: 0;
   font-size: 1.6rem;
   text-transform: capitalize;
+}
+
+@media screen and (max-width: 1550px) {
+  .list-item {
+    width: 50rem;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .list-item {
+    width: 45rem;
+  }
+  .list-item_imgCon img {
+    width: 6rem;
+    height: 6rem;
+  }
+  .list-item_user-info h2 {
+    font-size: 2rem;
+  }
+  .list-item_user-role {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .list-item {
+    width: 35rem;
+  }
+  .list-item_user-role {
+    font-size: 1.2rem;
+    gap: 0.5rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .list-item_imgCon img {
+    width: 5rem;
+    height: 5rem;
+  }
+  .list-item_user-info h2 {
+    font-size: 1.8rem;
+  }
+  .list-item {
+    width: 100%;
+  }
+  .list-item_user-role {
+    font-size: 1.1rem;
+    gap: 0.3rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+  }
+  .list-item_user-role p:nth-child(2) {
+    display: none;
+  }
+  .list-item_user-role p:nth-child(3) {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 350px) {
+  .list-item_user-info h2 {
+    font-size: 1.4rem;
+  }
 }

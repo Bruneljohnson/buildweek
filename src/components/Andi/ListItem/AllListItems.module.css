@@ -40,3 +40,22 @@
 .mapped-list ul::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+@media screen and (max-width: 1150px) {
+  .mapped-list {
+    grid-template-columns: 1fr;
+  }
+  .all-list h3 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .all-list h3 {
+    font-size: 1.8rem;
+  }
+  .err {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+}

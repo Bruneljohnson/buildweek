@@ -30,6 +30,15 @@
   gap: 2rem;
 }
 
+.logo > div > button {
+  display: none;
+}
+
+.logo > div > button:hover,
+.logo > div > button > svg:hover {
+  color: var(--color-red-highlight);
+}
+
 .icons {
   margin-right: 0;
   justify-content: flex-end;
@@ -87,4 +96,25 @@
 }
 .iconContainer:hover {
   background: rgba(157, 157, 157, 0.301);
+}
+
+@media screen and (max-width: 1150px) {
+  .logo > div > button {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .icons figure:not(:last-child) {
+    display: none;
+  }
+  .logo h1 {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .logo h1 {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
 }

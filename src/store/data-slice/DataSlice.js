@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { clubs, trainers, workshops } from "../../constants/data";
 
 const initialDataState = {
-  workshops: workshops, //[]
-  trainers: trainers, // []
-  clubs: clubs, // []
+  workshops: [], //[]
+  trainers: [],
+  workshopEx: [],
+  showLeftPanel: false,
 
   searchSelect: 1,
   optionWorkshopSelect: "",
@@ -21,11 +21,11 @@ const DataSlice = createSlice({
     storeWorkshops(state, action) {
       state.workshops = action.payload;
     },
+    storeWorkshopEx(state, action) {
+      state.workshopEx = action.payload;
+    },
     storeTrainers(state, action) {
       state.trainers = action.payload;
-    },
-    storeClubs(state, action) {
-      state.clubs = action.payload;
     },
     storeSearchSelect(state, action) {
       state.searchSelect = action.payload;
@@ -45,10 +45,10 @@ const DataSlice = createSlice({
     storeProfileIdentity(state, action) {
       state.profileIdentity = action.payload;
     },
+    storeLeftPanel(state, action) {
+      state.showLeftPanel = action.payload;
+    },
     remove(state) {
-      state.workshops = workshops;
-      state.trainers = trainers;
-      state.clubs = clubs;
       state.optionWorkshopSelect = "";
       state.optionClubSelect = "";
       state.selectEx = "";

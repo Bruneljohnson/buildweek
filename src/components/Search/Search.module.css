@@ -22,8 +22,8 @@
   width: 100%;
   padding-left: 2rem;
   font-size: 1.6rem;
-  font-weight: 500;
-  letter-spacing: 1px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
   line-height: 1.8rem;
   color: var(--color-black-text);
   height: 4rem;
@@ -40,8 +40,8 @@
 .search_input::placeholder {
   color: #bbb;
   font-size: 1.6rem;
-  font-weight: 500;
-  letter-spacing: 1px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 .search_button {
@@ -91,4 +91,48 @@
 .search_select-active {
   color: var(--color-red-highlight);
   border-bottom: 2px solid var(--color-red-highlight);
+}
+
+@media screen and (max-width: 2000px) {
+  .search_select {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 1550px) {
+  .search_select {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .search_select {
+    width: 45%;
+  }
+  .search_input,
+  .search_input::-webkit-input-placeholder,
+  .search_input::placeholder {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 850px) {
+  .search_select {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .search_select {
+    width: 85%;
+  }
+  .search_select button {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .search_select {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .search_select {
+    width: 100%;
+  }
 }

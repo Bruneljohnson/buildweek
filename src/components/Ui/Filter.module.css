@@ -11,14 +11,15 @@
 
 .filter_input {
   font-size: 1.6rem;
-  display: inline-block;
+  display: flex;
+  width: auto;
   margin-left: 0;
   text-transform: capitalize;
   color: var(--color-grey);
   align-items: center;
   justify-content: center;
   background: transparent;
-  padding: 1rem;
+  padding: 0.5rem;
   outline: none;
   border: none;
   cursor: pointer;
@@ -27,4 +28,20 @@
 
 .filter_input:hover {
   color: var(--color-red-highlight);
+}
+
+@media screen and (max-width: 1550px) {
+  .workshop {
+    gap: 1rem;
+  }
+  .filter_input {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 350px) {
+  .workshop {
+    width: 30%;
+
+    grid-template-columns: 1fr;
+  }
 }

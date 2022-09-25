@@ -33,7 +33,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
   color: var(--color-black-text);
   font-size: 1.4rem;
 }
@@ -54,7 +54,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 0.1rem;
+  gap: 0.2rem;
 }
 
 .fullProfile_deets li > strong,
@@ -76,18 +76,22 @@
   text-transform: uppercase;
 }
 
+.button > svg {
+  color: var(--color-red-highlight);
+}
+
 .button-email {
   right: 1rem;
-  top: 1rem;
+  top: 0;
   padding: 0.5rem;
   position: absolute;
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
-  background: orange;
-  color: var(--color-black-text);
+  background: transparent;
   border: none;
-  border-radius: 0.4rem;
+  border-bottom: 2px solid var(--color-red-highlight);
+  color: var(--color-grey);
   outline: none;
   cursor: pointer;
 }
@@ -102,8 +106,7 @@
 }
 
 .button-email:hover {
-  background: var(--color-red-highlight);
-  color: var(--color-cream-text);
+  color: var(--color-red-highlight);
 }
 
 .exp {
@@ -112,4 +115,50 @@
   gap: 2rem;
   width: 100%;
   margin-left: 0;
+}
+
+@media screen and (max-width: 2000px) {
+  .fullProfile {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 1550px) {
+  .fullProfile {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .fullProfile {
+    width: 100%;
+  }
+  .button-email {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .fullProfile figure img {
+    width: 9rem;
+    height: 9rem;
+  }
+  .fullProfile_title h2 {
+    font-size: 2rem;
+  }
+
+  .fullProfile_title-subinfo {
+    font-size: 1.3rem;
+  }
+  .fullProfile_deets {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .fullProfile_title-subinfo span:nth-child(2) {
+    display: none;
+  }
+  .fullProfile_title-subinfo {
+    flex-direction: column;
+  }
 }

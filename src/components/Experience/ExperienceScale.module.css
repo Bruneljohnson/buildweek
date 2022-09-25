@@ -1,12 +1,29 @@
-.exScale {
+.exScale,
+.exScaleBtn {
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  top: 10rem;
-  right: 4rem;
+  top: 1rem;
+  left: 1rem;
   cursor: pointer;
+}
+
+.exScaleBtn {
+  width: 10%;
+  top: 0;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 2px solid var(--color-red-highlight) !important;
+}
+
+.exScale {
+  padding: 1rem;
+  z-index: 30;
+  background: rgba(0, 0, 0, 0.061);
+  border-radius: 0.8rem;
 }
 
 .ex {
@@ -14,11 +31,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-transform: capitalize;
-  text-align: left;
-  padding: 1rem;
-  font-weight: 500;
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: 600;
   line-height: 1.5;
   letter-spacing: 1px;
   width: 18rem;
@@ -53,4 +70,24 @@
 
 .six {
   background: #004f00;
+}
+
+@media screen and (max-width: 1550px) {
+  .exScaleBtn {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .exScaleBtn {
+    width: 10%;
+    font-size: 1.2rem;
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .exScaleBtn {
+    width: 30%;
+  }
 }

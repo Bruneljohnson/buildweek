@@ -14,9 +14,9 @@ const Search = () => {
   /** Using Custom Hook (Use-Input) to capture input data. */
   const {
     value: searchValue,
+    inputBlur: searchBlurHandler,
     inputHandler: searchInputHandler,
-    reset: clearSearch,
-  } = useInput((value) => !value.toLowerCase().trim() === "");
+  } = useInput((value) => value.toLowerCase().trim() !== "");
 
   /** Change search/filter options.
    * ANDi name is for search bar
@@ -39,28 +39,43 @@ const Search = () => {
     dispatch(DataActions.storeExSelect(value));
   };
 
+  // Clear Profile when search Select or onBlur changes
   useEffect(() => {
     dispatch(DataActions.remove());
-  }, [dispatch, searchSelect]);
+  }, [dispatch, searchSelect, searchBlurHandler]);
 
+  //Submit search value
   const submitHandler = (event) => {
     event.preventDefault();
 
     //Save to redux
     const searchANDi = searchValue.toLowerCase();
-    dispatch(DataActions.storeSearchValue(searchANDi));
     console.log(searchANDi);
-    // 300ms wait - debounce.
+    dispatch(DataActions.storeSearchValue(searchANDi));
   };
+
+  // Debouncer so onChange is only read after 300ms
+  useEffect(() => {
+    const debouncer = setTimeout(() => {
+      const searchANDi = searchValue.toLowerCase();
+      console.log(searchANDi);
+      dispatch(DataActions.storeSearchValue(searchANDi));
+    }, 300);
+
+    return () => {
+      clearTimeout(debouncer);
+    };
+  }, [searchValue, dispatch]);
 
   return (
     <div className="section-padding">
-      <form className={` ${classes.search}`} onChange={submitHandler}>
+      <form className={` ${classes.search}`} onSubmit={submitHandler}>
         <div className={classes["search_input-group"]}>
           <input
             value={searchValue}
             placeholder="Search by name"
             onChange={searchInputHandler}
+            onBlur={searchBlurHandler}
             type="text"
             className={classes["search_input"]}
           />
@@ -71,7 +86,7 @@ const Search = () => {
           </div>
         </div>
       </form>
-      <div className={classes.search_select}>
+      <div className={classes["search_select"]}>
         <button
           className={`custom-button ${
             searchSelect === 1 ? classes["search_select-active"] : ""
@@ -96,7 +111,7 @@ const Search = () => {
           }`}
           onClick={() => searchSelectHandler(3)}
         >
-          Business Unit
+          BU/Club
         </button>
       </div>
       {searchSelect === 2 && (

@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/buildweek/static/css/main.fd7974b3.css",
+    "main.js": "/buildweek/static/js/main.9a894df4.js",
+    "index.html": "/buildweek/index.html",
+    "main.fd7974b3.css.map": "/buildweek/static/css/main.fd7974b3.css.map",
+    "main.9a894df4.js.map": "/buildweek/static/js/main.9a894df4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fd7974b3.css",
+    "static/js/main.9a894df4.js"
+  ]
+}

@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/buildweek/static/css/main.683c08e7.css",
-    "main.js": "/buildweek/static/js/main.4aa822ee.js",
+    "main.js": "/buildweek/static/js/main.d859e096.js",
     "index.html": "/buildweek/index.html",
     "main.683c08e7.css.map": "/buildweek/static/css/main.683c08e7.css.map",
-    "main.4aa822ee.js.map": "/buildweek/static/js/main.4aa822ee.js.map"
+    "main.d859e096.js.map": "/buildweek/static/js/main.d859e096.js.map"
   },
   "entrypoints": [
     "static/css/main.683c08e7.css",
-    "static/js/main.4aa822ee.js"
+    "static/js/main.d859e096.js"
   ]
 }
